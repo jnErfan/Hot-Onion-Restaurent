@@ -1,0 +1,17 @@
+.navItem {
+  color: black;
+  padding: 5px 15px;
+  margin-right: 10px;
+  margin-left: 10px;
+  border-radius: 5px;
+  font-family: "Bebas Neue", cursive;
+}
+.navItem:hover {
+  background-color: black;
+  color: white;
+}
+.dropdown {
+  font-family: "Bebas Neue", cursive;
+  padding: 0px 5px;
+  border-radius: 5px;
+}

@@ -1,0 +1,11 @@
+.foodNavBar {
+  color: #000;
+  text-decoration: none;
+  margin-right: 50px;
+  font-weight: 500;
+}
+.foodNavBar:hover {
+  color: #000;
+  padding-bottom: 3px;
+  border-bottom: 3px solid red;
+}
