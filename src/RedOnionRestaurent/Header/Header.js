@@ -5,11 +5,10 @@ import Typewriter from 'typewriter-effect';
 
 
 const Header = () => {
-   
     return (
         <div>
             <NavBar/>
-            <section className="bg-Style headerItem">
+            <section className="bg-Style headerItem" id="home">
            
           <div className="">
           <div>
@@ -20,7 +19,7 @@ const Header = () => {
                <span className="text-danger">
                     <Typewriter
                     options={{
-                        strings: ['Restaurent', 'Foods Zone', 'Bakery'],
+                        strings: ['Restaurant', 'Foods Zone', 'Bakery'],
                         autoStart: true,
                         loop: true,
                     }}/>

@@ -4,7 +4,7 @@ import "./Services.css";
 
 const Services = () => {
     return (
-        <div className="container mt-5">
+        <div className="container mt-5" id="services" >
             <div>
             <h2 className="text-start">Why You Choose US</h2>
             <p className="text-start"><small>
@@ -14,8 +14,9 @@ const Services = () => {
 
             <div className="container">
 <Row xs={1} md={2} lg={3} className="g-4 mb-5">
-        <Col>
+        <Col className="">
         <Card className="border-0 mt-4 shadow-sm rounded">
+        <div className="servicesContainer">
         <div>
         <Card.Img variant="top" src="https://i.ibb.co/3WPcPQ6/1.png" />
         </div>
@@ -43,7 +44,7 @@ const Services = () => {
             </div>
             <div className="modal-body">
                 <p>
-                Red Onion Restaurent  <br />
+                Red Onion Restaurant  <br />
                 So who came out on top? UberEats, which turned in a time nearly five minutes faster than the rest of the competition: 35 minutes, 31 seconds. Postmates came in second at 40 minutes, 12 seconds. DoorDash had an average delivery time of 42 minutes, 1 second.
                 </p>
             </div>
@@ -55,11 +56,13 @@ const Services = () => {
             </div>
             </div>
             </Card.Body>
+        </div>
             </Card>
             </Col>
         <Col>
         <Card className="border-0 mt-4 shadow-sm rounded">
-        <div>
+       <div className="servicesContainer">
+       <div>
         <Card.Img variant="top" src="https://i.ibb.co/vZYtMxd/2.png" />
         </div>
         <Card.Body className="d-flex">
@@ -86,7 +89,7 @@ const Services = () => {
             </div>
             <div className="modal-body">
                 <p>
-                Red Onion Restaurent  <br />
+                Red Onion Restaurant  <br />
                 In order to achieve this they needed a food partner, and Gibsons IGA owners Susan and Bob Hoy have stepped up in a huge way. You might say they are Guardian Angels of the Response Plan. They had been looking for ways to help people, talking with restaurants owners like Drift and Wheatberries
                 </p>
             </div>
@@ -98,11 +101,13 @@ const Services = () => {
             </div>
             </div>
             </Card.Body>
+       </div>
             </Card>
             </Col>
         <Col>
         <Card className="border-0 mt-4 shadow-sm rounded">
-        <div>
+       <div className="servicesContainer">
+       <div>
         <Card.Img variant="top" src="https://i.ibb.co/kQRWqdz/3.png" />
         </div>
         <Card.Body className="d-flex">
@@ -129,7 +134,7 @@ const Services = () => {
             </div>
             <div className="modal-body">
                 <p>
-                Red Onion Restaurent  <br />
+                Red Onion Restaurant  <br />
                 The Online Ordering System can be defined as a simple and convenient way for customers to purchase food online, without having to go to the restaurant. This system is enabled by the internet – it is the internet that connects the restaurant or the food company on one hand, and the customer on other hand.
                 </p>
             </div>
@@ -141,6 +146,7 @@ const Services = () => {
             </div>
             </div>
             </Card.Body>
+       </div>
             </Card>
             </Col>
 </Row>

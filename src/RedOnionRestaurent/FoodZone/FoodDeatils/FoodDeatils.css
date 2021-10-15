@@ -1,0 +1,18 @@
+.quantityButton {
+  width: 120px;
+  padding-right: 125px;
+}
+.inputField {
+  width: 50px;
+  font-size: 15px;
+  text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+.carouselContainer {
+  margin-left: -30px;
+}

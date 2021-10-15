@@ -1,3 +1,6 @@
 .seeMore {
   cursor: pointer;
 }
+.servicesContainer:hover {
+  border-bottom: 5px solid #dc3545;
+}

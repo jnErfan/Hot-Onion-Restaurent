@@ -1,8 +1,11 @@
 import React from 'react';
 import "./Navbar.css";
 import { Button, Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { HashLink } from 'react-router-hash-link';
 
 const NavBar = () => {
+
+
     return (
 <Navbar bg="light" variant="light" expand="md">
 
@@ -15,23 +18,25 @@ const NavBar = () => {
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
     
-      <Nav.Link className="navItem" href="#home">Home</Nav.Link>
+      <Nav.Link as={HashLink} className="navItem" to="#home">Home</Nav.Link>
       <Nav className="me-auto dropdown">
       <NavDropdown  title="Foods" id="basic-nav-dropdown">
-          <NavDropdown.Item href="#breakfast">Breakfast</NavDropdown.Item>
-          <NavDropdown.Item href="#lunch">Lunch</NavDropdown.Item>
-          <NavDropdown.Item href="#dinner">Dinner</NavDropdown.Item>
+          <NavDropdown.Item as={HashLink} to="/breakfast#breakfast">Breakfast</NavDropdown.Item>
+          <NavDropdown.Item as={HashLink} to="/lunch#lunch">Lunch</NavDropdown.Item>
+          <NavDropdown.Item as={HashLink} to="/dinner#dinner">Dinner</NavDropdown.Item>
         </NavDropdown>
         </Nav>
-      <Nav.Link className="navItem" href="#services">Services</Nav.Link>
+      <Nav.Link as={HashLink} className="navItem" to="#services">Services</Nav.Link>
       
     </Navbar.Collapse>
     </div>
     <div>
    
    <i className="fas fa-shopping-cart fs-4 me-5"></i>
-    <Button variant="outline-dark px-3 py-0 mb-2 rounded-pill fw-bold">LOGIN</Button>
-    <Button variant="dark px-3 py-0 mb-2 rounded-pill ms-3 fw-bold">SIGN UP</Button>
+    
+    <HashLink to="/login#login" ><Button variant="outline-dark px-3 py-0 mb-2 rounded-pill fw-bold">LOGIN</Button></HashLink>
+
+    <HashLink to="/signin#signin" ><Button variant="dark px-3 py-0 mb-2 rounded-pill ms-3 fw-bold">SIGN UP</Button></HashLink>
     </div>
   </Container>
 

@@ -19,7 +19,7 @@ const Footer = () => {
            <div className="col col-12 col-md-6 col-lg-4">
            <p className="footer-Text fw-bolder text-start">
            Hello. Assalamualaikum Guys. <br /> 
-           Red Onion Restaurent  This Is Our Online Restaurent 
+           Red Onion Restaurant  This Is Our Online Restaurant 
            We Hope You Enjoy Visiting This Website.
            Thanks For Visit Our Web Site.
             </p>
@@ -40,7 +40,7 @@ const Footer = () => {
                             <Nav.Link className="text-white py-0" href="#GetHelp">Get Help</Nav.Link>
                             <Nav.Link className="text-white py-0" href="#About">About Our Online Food</Nav.Link>
                             <Nav.Link className="text-white py-0" href="#Blog">Read Our Blog </Nav.Link>
-                            <Nav.Link className="text-white py-0" href="#NearMe">Restaurent Near Me </Nav.Link>
+                            <Nav.Link className="text-white py-0" href="#NearMe">Restaurant Near Me </Nav.Link>
                         </p>
             </div>
             </div>

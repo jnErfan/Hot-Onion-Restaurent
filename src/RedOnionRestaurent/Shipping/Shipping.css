@@ -1,0 +1,15 @@
+.cart-info {
+  border-radius: 15px;
+  background-color: #f5f5f5;
+  border: 0px;
+  transition: 0.5s;
+  box-shadow: 1px 1px 5px #7a7a7a44;
+}
+.cart-info:hover {
+  box-shadow: 1px 1px 5px #3a3a3a7e;
+  transform: scale(1.05);
+  border-radius: 15px;
+}
+.shippingDetails {
+  padding: 0px 100px;
+}

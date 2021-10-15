@@ -9,6 +9,11 @@ import Lunch from './RedOnionRestaurent/FoodZone/Lunch/Lunch';
 import NotFound from './RedOnionRestaurent/NotFound/NotFound';
 import Services from './RedOnionRestaurent/Services/Services';
 import Footer from './RedOnionRestaurent/Footer/Footer';
+import FoodDeatils from './RedOnionRestaurent/FoodZone/FoodDeatils/FoodDeatils';
+import SignIn from './RedOnionRestaurent/SignIn/SignIn';
+import Login from './RedOnionRestaurent/Login/Login';
+import Shipping from './RedOnionRestaurent/Shipping/Shipping';
+import ConfirmOrder from './RedOnionRestaurent/ConfirmOrder/ConfirmOrder';
 
 
 function App() {
@@ -22,15 +27,39 @@ function App() {
                 <Route exact path="/">
                     <Breakfast/>
                 </Route>
+                
                 <Route path="/breakfast">
                     <Breakfast/>
                 </Route>
+
                 <Route path="/lunch">
                     <Lunch/>
                 </Route>
+
                 <Route path="/dinner">
                     <Dinner/>
                 </Route>
+
+                <Route path="/fooddetails">
+                <FoodDeatils/>
+                </Route>
+
+                <Route path="/signin">
+                <SignIn/>
+                </Route>
+
+                <Route path="/login">
+                <Login/>
+                </Route>
+
+                <Route path="/shipping">
+                <Shipping/>
+                </Route>
+
+                <Route path="/confirmorder">
+                <ConfirmOrder/>
+                </Route>
+                
                 <Route exact path="*">
                     <NotFound/>
                 </Route>
