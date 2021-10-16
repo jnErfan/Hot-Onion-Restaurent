@@ -1,8 +1,15 @@
 import React from 'react';
 import { FormControl } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 import "./Shipping.css";
 
 const Shipping = () => {
+  const history = useHistory();
+
+  const placeOrder = () => {
+    history.push('/confirmorder')
+  }
+
     return (
         <div className="container mt-5">   
             <div className="row">
@@ -93,7 +100,7 @@ const Shipping = () => {
 
             </tbody>
           </table>
-          <button className="btn btn-secondary fw-bold container-fluid mb-2">Place Order</button>
+          <button onClick={placeOrder} className="btn btn-secondary fw-bold container-fluid mb-2">Place Order</button>
           </div>
           </div>
         </div>

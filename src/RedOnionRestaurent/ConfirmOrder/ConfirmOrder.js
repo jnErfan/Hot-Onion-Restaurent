@@ -1,11 +1,18 @@
 import React from 'react';
+import { useHistory } from 'react-router';
 import "./ConfirmOrder.css"
 
 const ConfirmOrder = () => {
+
+    const history = useHistory();
+
+    const backToHome = () => {
+      history.push('/')
+    }
+
     return (
         <div className="container">
            <div className="row">
-
         <div className="col col-12 col-md-7 col-lg-7 shippingDetails">
                <div>
                <img src="https://i.ibb.co/68LQf0K/Take-Away-2.gif" className="deleveryBoy" alt="" />
@@ -61,8 +68,8 @@ const ConfirmOrder = () => {
                     </div>
                 </div>
         </div>
-
            </div>
+           <button onClick={backToHome} className="btn btn-outline-danger fw-bold mb-4 mb-2 mt-5">Back To Home</button>
         </div>
     );
 };

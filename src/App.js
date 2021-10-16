@@ -14,12 +14,15 @@ import SignIn from './RedOnionRestaurent/SignIn/SignIn';
 import Login from './RedOnionRestaurent/Login/Login';
 import Shipping from './RedOnionRestaurent/Shipping/Shipping';
 import ConfirmOrder from './RedOnionRestaurent/ConfirmOrder/ConfirmOrder';
+import AuthContext from './Context/AuthContext';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 
 function App() {
   return (
     <div className="App">
-  
+  <AuthContext>
+      
   <Router>
             <Header/>
             <ScheduleNav/>
@@ -52,13 +55,13 @@ function App() {
                 <Login/>
                 </Route>
 
-                <Route path="/shipping">
+                <PrivateRoute path="/shipping">
                 <Shipping/>
-                </Route>
+                </PrivateRoute>
 
-                <Route path="/confirmorder">
+                <PrivateRoute path="/confirmorder">
                 <ConfirmOrder/>
-                </Route>
+                </PrivateRoute>
                 
                 <Route exact path="*">
                     <NotFound/>
@@ -69,6 +72,7 @@ function App() {
         </Router>
 
 
+  </AuthContext>
     </div>
   );
 }
