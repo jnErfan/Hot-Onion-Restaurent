@@ -12,7 +12,7 @@ const ScheduleNav = () => {
     }
 
     return (
-        <Container className="mt-5">
+        <Container className="mt-5 mb-5">
             <NavLink activeStyle={activeStyle} className="foodNavBar" to="/breakfast">Breakfast</NavLink>
             <NavLink activeStyle={activeStyle} className="foodNavBar" to="/lunch">Lunch</NavLink>
             <NavLink activeStyle={activeStyle} className="foodNavBar" to="/dinner">Dinner</NavLink>

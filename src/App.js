@@ -43,7 +43,7 @@ function App() {
                     <Dinner/>
                 </Route>
 
-                <Route path="/fooddetails">
+                <Route path="/fooddetails/:foodId">
                 <FoodDeatils/>
                 </Route>
 

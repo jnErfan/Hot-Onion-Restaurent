@@ -1,6 +1,11 @@
 .seeMore {
   cursor: pointer;
 }
+
+.servicesContainer {
+  transition: 500ms;
+}
+
 .servicesContainer:hover {
-  border-bottom: 5px solid #dc3545;
+  transform: scale(1.03);
 }

@@ -1,4 +1,8 @@
+.breakfastCard {
+  transition: 700ms;
+}
 .breakfastCard:hover {
   box-shadow: 1px 1px 15px rgb(219, 206, 206);
   cursor: pointer;
+  transform: scale(1.1);
 }

@@ -1,37 +1,50 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FormControl, Row, Button } from 'react-bootstrap';
-import { useHistory } from 'react-router';
+import { useHistory, useParams } from 'react-router';
 import "./FoodDeatils.css";
 
 
 const FoodDeatils = () => {
 
     const history = useHistory();
-
+    const {foodId} = useParams();
     const orderShipping = () => {
       history.push('/shipping')
     }
 
+
+    const [foodDetails, setFoodDetails] = useState([]);
+
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/jnErfan/Restaurant-Foods-Data/main/foodDetailsData.json')
+    .then(res => res.json())
+    .then(data => setFoodDetails(data))
+  },[]) 
+
+   const foodDetail = foodDetails.find(foodDetail => foodDetail?.id === foodId)
+
+   console.log(foodDetail);
+
     return (
         <div className="container">
-            <Row xm={1} md={2} lg={2}>
-
+          
+          <Row xm={1} md={2} lg={2}>
                 <div>
             <h1 className="text-start">
-            Healthy Meal Plan
+            {foodDetail?.name}
             </h1>
             <p className="text-start">
-            This hearty dinner, full of protein-packed lentils and heart-healthy salmon, takes only 15 minutes to cook.
+            {foodDetail?.discription}
             </p>
             <div className="d-flex align-items-center">
               <div>
               <h2 className="me-4">
-                    $23.99
+                    {foodDetail?.price}$
                 </h2>
               </div>
                 <div className="d-flex rounded-pill border quantityButton py-1">
             <button className="border-0 bg-transparent ps-3"> <i className="fas fa-minus"></i> </button>
-            <FormControl className="border-0 inputField"  type="number" />
+            <FormControl className="border-0 inputField fw-bold" defaultValue={1}  type="number" />
             <button className="border-0 bg-transparent"> <i className="fas fa-plus text-danger"></i> </button>
                 </div>
             </div>
@@ -45,10 +58,10 @@ const FoodDeatils = () => {
     <div className="carousel-item active">
         <div className="row">
             <div className="col col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-center">
-            <img src="https://i.ibb.co/PFXKLPS/lunch4.png" className="d-block w-100" alt=""/>
+            <img src={foodDetail?.displayImg} className="d-block w-100" alt=""/>
             </div>
             <div className="col col-lg-6 col-md-6 col-sm-6 col-6 d-flex justify-content-center">
-            <img src="https://i.ibb.co/MpfsRdw/lunch3.png" className="d-block w-100" alt=""/>
+            <img src={foodDetail?.img1} className="d-block w-100" alt=""/>
             </div>
         </div>
     </div>
@@ -56,10 +69,10 @@ const FoodDeatils = () => {
     <div className="carousel-item">
         <div className="row">
             <div className="col col-lg-6 col-md-6 col-sm-6 col-6 d-flex">
-            <img src="https://i.ibb.co/Tmj7RNb/lunch2.png" className="d-block w-100" alt=""/>
+            <img src={foodDetail?.img2} className="d-block w-100" alt=""/>
             </div>
             <div className="col col-lg-6 col-md-6 col-sm-6 col-6 d-flex">
-            <img src="https://i.ibb.co/4Pjs48k/lunch5.png" className="d-block w-100" alt=""/>
+            <img src={foodDetail?.img3} className="d-block w-100" alt=""/>
             </div>
         </div>
     </div>
@@ -75,10 +88,9 @@ const FoodDeatils = () => {
             {/* Row 2  */}
                 <div>
                 <div>
-                    <img className="w-75" src="https://i.ibb.co/t3NH6mq/lunch6.png" alt="" />
+                    <img className="w-75" src={foodDetail?.displayImg} alt="" />
                 </div>
                 </div>
-
             </Row>
         </div>
     );

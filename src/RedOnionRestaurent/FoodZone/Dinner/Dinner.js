@@ -1,32 +1,41 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Card, Col, Row } from 'react-bootstrap';
 import { useHistory } from 'react-router';
 import "./Dinner.css";
 
 const Dinner = () => {
   const history = useHistory();
+  const [dinners, setDinners] = useState([]);
 
-  const AddToCart = () => {
-    history.push('/fooddetails')
-  }
+  useEffect(() => {
+    fetch('https://raw.githubusercontent.com/jnErfan/Restaurant-Foods-Data/main/foodsData.json')
+    .then(res => res.json())
+    .then(data => setDinners(data.dinner))
+  },[])
+
     return (
         <div className="container" id="dinner" >
              <Row xs={1} md={2} lg={3} className="g-4 mb-5">
-  <Col>
-      <Card onClick={AddToCart} className="border-0 breakfastCard mt-5 pt-2">
+             {
+                dinners.map(dinner => 
+                  
+      <Col key={dinner.id}>
+      <Card onClick={()=> history.push(`/fooddetails/${dinner.id}`)} className="border-0 breakfastCard mt-5 pt-2">
        <div>
-       <Card.Img variant="top w-50" src="https://i.ibb.co/QQmbgRM/dinner6.png" />
+       <Card.Img variant="top w-50" src={dinner.displayImg} />
        </div>
         <Card.Body>
-          <Card.Title>Salmon With Grapefruit And Lentil Salad</Card.Title>
+          <Card.Title>{dinner.name}</Card.Title>
           <Card.Text>
-            How We Dreame About Our Future
+            {dinner.details}
           </Card.Text>
-          <h3>$9.99</h3>
+          <h3>{dinner.price}$</h3>
         </Card.Body>
       </Card>
     </Col>
-</Row>
+                  )
+             }
+              </Row>
         </div>
     );
 };

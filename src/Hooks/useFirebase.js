@@ -5,15 +5,17 @@ import { useEffect, useState } from 'react';
 FirebaseInitialize();
 const useFirebase = () => {
     const [user , setUser] = useState('');
+    const [isLoading , setIsLoading] = useState(true);
     const googleProvider = new GoogleAuthProvider();
 
     const auth = getAuth();
 
     const googleSignIn = () => {
+        setIsLoading(true)
        return signInWithPopup(auth, googleProvider)
         .catch(error => {
             console.log(error.message);
-        })
+        }).finally(() => setIsLoading(false));
     }
 
     const logOut = () => {
@@ -21,7 +23,7 @@ const useFirebase = () => {
             setUser("")
         }).catch(error => {
             console.log(error.message);
-        })
+        }).finally(() => setIsLoading(false));
     }
 
 
@@ -32,6 +34,7 @@ const useFirebase = () => {
             }else{
                setUser('')
             }
+             setIsLoading(false)
         })
     }, [auth])
 
@@ -39,7 +42,8 @@ return {
     user, 
     setUser,
     googleSignIn,
-    logOut
+    logOut,
+    isLoading
 }
 };
 

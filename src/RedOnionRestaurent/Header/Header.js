@@ -12,7 +12,7 @@ const Header = () => {
            
           <div className="">
           <div>
-               <h1 className="text-start">
+               <h1 className="text-start headerTitle">
 
                 Welcome To Red Onion 
 
@@ -29,7 +29,7 @@ const Header = () => {
 
            </div>
 
-           <div className="d-flex justify-content-center mt-4">
+           <div className="d-flex justify-content-center mt-5 headerInput">
            <input type="text" className="form-control w-75 border-0 rounded-pill" placeholder="Search Food" disabled />
            <button className="btn btn-danger searchbutton py-1 px-3 rounded-pill" disabled>Search</button>
            </div>
