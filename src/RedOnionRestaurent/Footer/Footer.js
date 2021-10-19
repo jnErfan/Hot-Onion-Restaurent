@@ -3,10 +3,8 @@ import { Nav } from 'react-bootstrap';
 import "./Footer.css";
 
 const Footer = () => {
-    const hireMe = () => {
-        window.location.href = 'https://www.linkedin.com/in/j-n-erfan-8368b0216/';
-    }
 
+    
     return (
         <div className="footerContainer"> 
 <div className="container">
@@ -45,7 +43,7 @@ const Footer = () => {
             </div>
             </div>
             <div className="mb-4">
-                <button onClick={hireMe} className="btn btn-outline-light rounded-pill pt-1 pb-1 ps-3 pe-3" type="button">HIRE
+                <button onClick={()=> window.location.href = 'https://www.linkedin.com/in/j-n-erfan-8368b0216/'} className="btn btn-outline-light rounded-pill pt-1 pb-1 ps-3 pe-3" type="button">HIRE
                     ME</button>
             </div>
 </div>
